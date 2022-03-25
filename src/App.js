@@ -1,25 +1,22 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { Layout } from './components/Layout.js';
+import  Events  from './components/Events.js';
+import { Routes, Route } from 'react-router-dom';
+import AnEvent from './components/AnEvent.js';
 
-function App() {
+
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <Routes>
+      <Route path="/" element={<Layout title="Viðburðir á næstunni"><Events /></Layout>}>
+        <Route path=":eventId" element={<AnEvent />} />
+        
+      </Route>
+      
+    </Routes>
   );
 }
 
-export default App;
