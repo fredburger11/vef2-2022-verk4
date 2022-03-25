@@ -3,6 +3,7 @@ import api from './api';
 
 // Ef það er notandi í localStorage erum við með innskráðan notanda
 // hér gætum við líka sótt token
+// eslint-disable-next-line
 const user = JSON.parse(localStorage.getItem('user') || 'null');
 
 export const Context = React.createContext({
@@ -38,12 +39,14 @@ export default class User extends Component {
 
     if (login.loggedin) {
       const { user } = login;
+      // eslint-disable-next-line
       localStorage.setItem('user', JSON.stringify(user));
       this.setState({ user, fetching: false, authenticated: true });
     }
   };
 
   logoutUser = async () => {
+    // eslint-disable-next-line
     localStorage.removeItem('user');
     this.setState({ user: null });
   };

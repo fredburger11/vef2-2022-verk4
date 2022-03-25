@@ -4,6 +4,7 @@ import App from "./App";
 import Login from './Login';
 import AnEvent from './components/AnEvent.js';
 
+// eslint-disable-next-line
 const rootElement = document.getElementById("root");
 render(
   <BrowserRouter>

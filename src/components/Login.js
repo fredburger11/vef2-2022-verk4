@@ -28,7 +28,7 @@ export default class Login extends Component {
     const { username, password } = this.state;
     return (
       <Context.Consumer>
-        {({ message, loginUser, logoutUser, fetching, authenticated }) => {
+        {({ loginUser, logoutUser, authenticated }) => {
 
           if (authenticated) {
             return (
